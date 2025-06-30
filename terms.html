@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - RepeatFeast</title>
+    <style>
+        /* Global Styles - Inherited from main site */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #FFA07A;
+            --accent: #FFD166;
+            --light: #FFF5E6;
+            --dark: #333333;
+            --success: #06D6A0;
+            --text-light: #777;
+            --border: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles - Same as main site */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Terms Hero */
+        .terms-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .terms-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-section h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--dark);
+        }
+        
+        .terms-section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .terms-point {
+            margin-bottom: 25px;
+        }
+        
+        .terms-point h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Footer - Enhanced with contact info */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .terms-content {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .terms-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                RepeatFeast <span>Your Go-To Recipes, Time After Time</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Terms Hero -->
+    <section class="terms-hero">
+        <div class="container terms-hero-content">
+            <h1>Terms of Service</h1>
+        </div>
+    </section>
+    
+    <!-- Terms Content -->
+    <div class="container">
+        <div class="terms-content">
+            <div class="terms-section">
+                <h2>Introduction</h2>
+                <p>Welcome to RepeatFeast! These Terms of Service ("Terms") govern your access to and use of the RepeatFeast website, services, and applications (collectively, the "Service"). By accessing or using our Service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Service. These Terms apply to all visitors, users, and others who access the Service. We may modify these Terms at any time, and such modifications will be effective immediately upon posting.</p>
+                
+                <div class="terms-point">
+                    <h4>1. Acceptance of Terms</h4>
+                    <p>By accessing or using the RepeatFeast Service, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, you must immediately cease all use of the Service. Your continued use of the Service constitutes your acceptance of any revised Terms. We reserve the right to modify these Terms at any time without prior notice, and such changes will be effective immediately upon posting. It is your responsibility to review these Terms periodically for updates.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>2. Description of Service</h4>
+                    <p>RepeatFeast provides an online platform that offers recipe suggestions, meal planning tools, cooking tips, and related content. Our Service includes web-based and mobile applications that allow users to discover, save, and share recipes. We may add, change, or remove features or functionality of the Service at any time without notice. The Service is provided "as is" and we make no guarantees regarding its availability, accuracy, or performance. We reserve the right to modify or discontinue the Service at any time.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>3. User Accounts</h4>
+                    <p>To access certain features of the Service, you may be required to create an account. You agree to provide accurate, current, and complete information during registration and to update such information as needed. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must immediately notify us of any unauthorized use of your account. We reserve the right to suspend or terminate accounts that violate these Terms or that we suspect of fraudulent activity.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>4. User Responsibilities</h4>
+                    <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You are solely responsible for all content you submit to the Service and for any consequences thereof. You agree not to engage in any activity that interferes with or disrupts the Service or its servers. You must not attempt to gain unauthorized access to any portion of the Service or any other systems or networks connected to the Service. Any use of the Service in violation of these limitations is strictly prohibited.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>5. Content Ownership</h4>
+                    <p>All content on the Service, including text, graphics, logos, images, and software, is the property of RepeatFeast or its content suppliers and protected by copyright laws. You may not modify, publish, transmit, participate in the transfer or sale of, reproduce, create derivative works from, distribute, or in any way exploit any of the content without express written permission. User-submitted content remains the property of the user, but by submitting content, you grant RepeatFeast a worldwide, non-exclusive license to use, display, and distribute your content.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>6. User-Generated Content</h4>
+                    <p>Users may submit recipes, comments, photos, and other content to the Service. By submitting content, you represent that you have all necessary rights to the content and that it does not violate any laws or third-party rights. We reserve the right to remove any user-generated content that we determine violates these Terms or is otherwise objectionable. RepeatFeast does not endorse any user-generated content and expressly disclaims any liability related to such content. Users are solely responsible for their interactions with other users.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>7. Prohibited Content</h4>
+                    <p>You agree not to submit content that is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, libelous, invasive of privacy, hateful, or racially, ethnically, or otherwise objectionable. Content that infringes any patent, trademark, trade secret, copyright, or other proprietary rights is prohibited. You may not submit false or misleading information or content that contains viruses or other harmful components. RepeatFeast reserves the right to determine what constitutes prohibited content.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>8. Copyright Policy</h4>
+                    <p>RepeatFeast respects intellectual property rights and expects users to do the same. We will respond to notices of alleged copyright infringement that comply with applicable law. If you believe your work has been copied in a way that constitutes copyright infringement, please provide our copyright agent with a written notice containing specified information. We reserve the right to remove content alleged to be infringing without prior notice and to terminate repeat infringers' accounts. Our designated copyright agent can be contacted at copyright@repeatfeast.com.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>9. Trademarks</h4>
+                    <p>The RepeatFeast name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of RepeatFeast or its affiliates or licensors. You must not use such marks without our prior written permission. All other names, logos, product and service names, designs, and slogans on the Service are the trademarks of their respective owners. Your use of the Service does not grant you any right or license to reproduce or otherwise use any RepeatFeast or third-party trademarks.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>10. Subscription Services</h4>
+                    <p>Certain features of the Service may require payment of fees. By signing up for a paid subscription, you agree to pay all applicable fees and taxes. All fees are non-refundable except as required by law. We may change the fees for our services at any time by posting the changes on the Service. Your continued use of paid services after the fee change becomes effective constitutes your agreement to pay the modified amount. You are responsible for providing accurate billing information.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>11. Free Trials</h4>
+                    <p>RepeatFeast may offer free trials of premium services for a limited period. At the end of the free trial period, your subscription will automatically convert to a paid subscription unless you cancel before the trial ends. We require a valid payment method to begin a free trial. By starting a free trial, you authorize us to charge your payment method for the subscription fee if you do not cancel before the trial ends. You may cancel your free trial at any time through your account settings.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>12. Cancellation Policy</h4>
+                    <p>You may cancel your RepeatFeast subscription at any time through your account settings. Cancellation will take effect at the end of your current billing period. You will continue to have access to premium features until the end of your billing period. We do not provide refunds or credits for partial months of service or unused time on your subscription. If you cancel your subscription, your account will revert to a free account at the end of your billing cycle. All fees paid are non-refundable.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>13. Third-Party Links</h4>
+                    <p>The Service may contain links to third-party websites or services that are not owned or controlled by RepeatFeast. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. You acknowledge and agree that RepeatFeast shall not be responsible or liable for any damage or loss caused by your use of any third-party websites or services. We strongly advise you to read the terms and privacy policies of any third-party sites you visit.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>14. Advertisements</h4>
+                    <p>RepeatFeast may display advertisements and promotions from third parties on the Service. The manner, mode, and extent of advertising by RepeatFeast are subject to change without notice. Your interactions with advertisers found on the Service, including payment and delivery of goods or services, are solely between you and the advertiser. We are not responsible for any loss or damage of any sort incurred as the result of any such dealings. Advertisements may be targeted to content or information on the Service.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>15. Termination</h4>
+                    <p>We may terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason, including if you breach these Terms. Upon termination, your right to use the Service will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability. You may terminate your account at any time by following the instructions on the Service or by contacting us.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>16. Service Modifications</h4>
+                    <p>RepeatFeast reserves the right at any time to modify or discontinue, temporarily or permanently, the Service (or any part thereof) with or without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuance of the Service. We may impose limits on certain features or restrict access to parts or all of the Service without notice or liability. We may release updates to the Service that may add, modify, or remove features at any time without notice.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>17. Disclaimer of Warranties</h4>
+                    <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. REPEATFEAST DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF THE SERVICE IS AT YOUR SOLE RISK.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>18. Limitation of Liability</h4>
+                    <p>IN NO EVENT SHALL REPEATFEAST BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICE. OUR TOTAL LIABILITY TO YOU FOR ANY CLAIMS RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU HAVE PAID US IN THE PAST SIX MONTHS. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. WE ARE NOT LIABLE FOR ANY FAILURE TO PERFORM DUE TO CAUSES BEYOND OUR CONTROL.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>19. Indemnification</h4>
+                    <p>You agree to defend, indemnify, and hold harmless RepeatFeast and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with your access to or use of the Service, your violation of these Terms, or your infringement of any intellectual property or other right of any person or entity. We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>20. Governing Law</h4>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. Any legal suit, action, or proceeding arising out of or related to these Terms or the Service shall be instituted exclusively in the federal or state courts located in San Francisco County, California. You waive any objections to the exercise of jurisdiction over you by such courts and to venue in such courts. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>21. Dispute Resolution</h4>
+                    <p>Before filing any claim against RepeatFeast, you agree to try to resolve the dispute by contacting us at disputes@repeatfeast.com. Most disputes can be resolved informally. For any claims that aren't resolved informally, you and RepeatFeast agree to resolve them through binding arbitration rather than in court, except that you may assert claims in small claims court if your claims qualify. Arbitration will be conducted by the American Arbitration Association under its Commercial Arbitration Rules. The arbitration will take place in San Francisco, California.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>22. Class Action Waiver</h4>
+                    <p>YOU AND REPEATFEAST AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. Further, unless both you and RepeatFeast agree otherwise, the arbitrator may not consolidate more than one person's claims and may not otherwise preside over any form of a representative or class proceeding. This waiver applies to both arbitration and court proceedings to the maximum extent permitted by law.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>23. Changes to Terms</h4>
+                    <p>We reserve the right to modify these Terms at any time. If we make material changes, we will notify you through the Service or by other means to give you the opportunity to review the changes before they become effective. Your continued use of the Service after we post any modifications constitutes your acceptance of the revised Terms. If you do not agree to the new Terms, you must stop using the Service. It is your responsibility to periodically review these Terms for updates or changes.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>24. Entire Agreement</h4>
+                    <p>These Terms constitute the entire agreement between you and RepeatFeast regarding the Service and supersede all prior agreements and understandings, whether written or oral. If any provision of these Terms is held to be invalid or unenforceable, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>25. Assignment</h4>
+                    <p>You may not assign or transfer these Terms, by operation of law or otherwise, without RepeatFeast's prior written consent. Any attempt by you to assign or transfer these Terms without such consent will be null and void. RepeatFeast may freely assign or transfer these Terms without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors, and permitted assigns. These Terms do not confer any third-party beneficiary rights.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>26. Force Majeure</h4>
+                    <p>RepeatFeast shall not be liable for any failure or delay in performance due to events beyond our reasonable control, including but not limited to acts of God, earthquakes, floods, fires, epidemics, pandemics, war, terrorism, labor disputes, utility failures, internet outages, or government actions. In the event of such circumstances, we will make reasonable efforts to notify you and to resume performance as soon as practicable. Our obligations shall be suspended during the period of force majeure.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>27. No Waiver</h4>
+                    <p>No failure or delay by RepeatFeast in exercising any right under these Terms shall constitute a waiver of that right. A waiver of any default is not a waiver of any subsequent default. Any waiver must be in writing and signed by an authorized representative of RepeatFeast to be effective. Our rights and remedies under these Terms are cumulative and not exclusive of any rights or remedies provided by law. Even if we don't enforce a provision, we may still enforce it later.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>28. Severability</h4>
+                    <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable while preserving its intent, or if such modification is not possible, severed from these Terms. The invalidity of any provision shall not affect the validity of the remaining provisions, which shall remain in full force and effect. The parties agree to replace any invalid provision with a valid provision that most closely approximates the intent and economic effect of the invalid provision.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>29. Notices</h4>
+                    <p>All notices required or permitted under these Terms shall be in writing and deemed given when delivered personally, sent by confirmed email, or mailed by registered or certified mail (return receipt requested) to the addresses provided by each party. Notices to RepeatFeast shall be sent to legal@repeatfeast.com or our corporate address. We may provide notices to you through the Service or to the email address associated with your account. It is your responsibility to keep your contact information current.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>30. Age Restrictions</h4>
+                    <p>The Service is not intended for children under 13 years of age. By using the Service, you represent that you are at least 13 years old. If you are between 13 and 18 years of age, you may use the Service only with the consent and supervision of a parent or legal guardian who agrees to be bound by these Terms. We do not knowingly collect personal information from children under 13. If we learn we have collected such information, we will delete it immediately.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>31. Geographic Restrictions</h4>
+                    <p>RepeatFeast is based in the United States. We make no claims that the Service or any content is accessible or appropriate outside of the United States. Access to the Service may not be legal by certain persons or in certain countries. If you access the Service from outside the United States, you do so on your own initiative and are responsible for compliance with local laws. We may limit the Service's availability to any person or geographic area at any time at our discretion.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>32. Export Control</h4>
+                    <p>You agree to comply with all applicable export and re-export control laws and regulations, including the Export Administration Regulations maintained by the U.S. Department of Commerce and trade and economic sanctions maintained by the U.S. Treasury Department's Office of Foreign Assets Control. You represent that you are not located in a country that is subject to U.S. government embargo or designated as a "terrorist supporting" country, and you are not listed on any U.S. government list of prohibited or restricted parties.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>33. Electronic Communications</h4>
+                    <p>By using the Service, you consent to receiving electronic communications from RepeatFeast, including emails, text messages, or notices posted on the Service. These communications may include notices about your account and information concerning or related to the Service. You agree that any notices, agreements, disclosures, or other communications that we send to you electronically will satisfy any legal communication requirements, including that such communications be in writing. You may opt out of promotional communications.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>34. Feedback</h4>
+                    <p>Any feedback, comments, or suggestions you may provide regarding RepeatFeast or the Service is entirely voluntary and we will be free to use such feedback without any obligation to you. By submitting feedback, you grant us a perpetual, irrevocable, worldwide, royalty-free license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content in any media. We may use feedback to improve our Service without compensation to you.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>35. Beta Features</h4>
+                    <p>RepeatFeast may offer access to beta features or services that are still in development ("Beta Features"). Beta Features are provided "as is" and may contain bugs, errors, or other issues. We may discontinue Beta Features at any time and are under no obligation to release them as part of our regular Service. Your use of Beta Features is at your own risk. We may limit availability of Beta Features to certain users or geographic regions. Feedback on Beta Features is especially appreciated.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>36. Mobile Services</h4>
+                    <p>The Service includes certain services that are available via a mobile device, including mobile applications ("Mobile Services"). Your carrier's normal messaging, data, and other rates and fees will apply to your use of Mobile Services. Certain Mobile Services may require internet access and may not work with all carriers or devices. By using Mobile Services, you agree we may communicate with you regarding RepeatFeast by SMS, MMS, or other electronic means to your mobile device. You may opt out of mobile alerts.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>37. Recipe Accuracy</h4>
+                    <p>While we strive to provide accurate recipe information, RepeatFeast does not guarantee the accuracy, completeness, or usefulness of any recipe or nutritional information on the Service. Cooking results may vary based on ingredient quality, equipment, cooking skills, and other factors. You are solely responsible for ensuring that any recipe is appropriate for your dietary needs and restrictions. We recommend consulting with a qualified professional for specific dietary or health concerns before using any recipe.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>38. Health and Safety</h4>
+                    <p>Cooking involves inherent risks, including risks of burns, cuts, and foodborne illness. You assume all risks associated with using recipes from the Service. Follow proper food safety procedures, including safe food handling, cooking temperatures, and storage practices. Some recipes may contain allergens or ingredients that may cause adverse reactions. It is your responsibility to check ingredients and prepare food safely. RepeatFeast is not responsible for any illness, injury, or other harm resulting from your use of recipes.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>39. Community Guidelines</h4>
+                    <p>RepeatFeast encourages a respectful community. When interacting with other users, you agree to be courteous and constructive. Do not harass, threaten, or intimidate other users. Respect differing opinions and cooking styles. Do not post spam, advertisements, or off-topic content. We reserve the right to remove content and suspend accounts that violate these guidelines. Repeated violations may result in permanent account termination. Help us maintain a positive environment for all cooking enthusiasts.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h4>40. Contact Information</h4>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <p>RepeatFeast Inc.</p>
+                    <p>123 Culinary Lane, Foodville, CA 90210</p>
+                    <p>Email: legal@repeatfeast.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Effective Date: June 15, 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer with Contact Info -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>RepeatFeast</h3>
+                    <p>Your go-to source for recipes so good, they become regulars in your meal rotation.</p>
+                    <div class="contact-info">
+                        <p><i>📍</i> 123 Culinary Lane, Foodville, CA 90210</p>
+                        <p><i>📞</i> +1 (555) 123-4567</p>
+                        <p><i>✉️</i> hello@repeatfeast.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Meal Planning</a></li>
+                        <li><a href="#">Scaling Recipes</a></li>
+                        <li><a href="#">Potluck Guide</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Submit Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 RepeatFeast. All rights reserved. "Your Go-To Recipes, Time After Time" is a trademark of RepeatFeast.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

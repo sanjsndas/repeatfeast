@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepeatFeast - Your Go-To Recipes, Time After Time</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #FFA07A;
+            --accent: #FFD166;
+            --light: #FFF5E6;
+            --dark: #333333;
+            --success: #06D6A0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Featured Categories */
+        .categories {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-img {
+            height: 150px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .category-card h3 {
+            padding: 20px;
+            font-size: 1.3rem;
+        }
+        
+        /* Recipe Section */
+        .recipes {
+            margin-bottom: 60px;
+        }
+        
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .recipe-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .recipe-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .recipe-info {
+            padding: 20px;
+        }
+        
+        .recipe-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .repeat-count {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .recipe-desc {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .recipe-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 3px;
+        }
+        .recipe-img {
+    height: 200px;
+    background-color: #ddd;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+        
+        /* Cooking Tips */
+        .cooking-tips {
+            background-color: white;
+            padding: 50px 0;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .tip-card {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tip-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Customer Satisfaction */
+        .satisfaction {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .declaration {
+            background-color: var(--accent);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .recipe-grid, .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .category-grid, .recipe-grid, .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                RepeatFeast <span>Your Go-To Recipes, Time After Time</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Feeding the People You Love? Start Here.</h1>
+            <p>Discover crowd-pleasing recipes that become family favorites time after time</p>
+            <a href="#" class="btn">Explore Recipes</a>
+        </div>
+    </section>
+    
+    <!-- Featured Categories -->
+    <section class="categories container">
+        <h2 class="section-title">Go-To Dishes for Every Occasion</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-img">🍝</div>
+                <h3>Family Favorites</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-img">🎉</div>
+                <h3>Crowd-Pleasers</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-img">🍲</div>
+                <h3>Big Batch Recipes</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-img">🥗</div>
+                <h3>Potluck Classics</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Recipe Section -->
+    <section class="recipes container">
+        <h2 class="section-title">Our Most Repeated Recipes</h2>
+        
+           <div class="recipe-grid">
+    <!-- Recipe 1 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r1.webp" alt="Ultimate Beef Lasagna">
+            <span class="badge">Family Favorite</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Ultimate Beef Lasagna</h3>
+            <div class="recipe-meta">
+                <span>Prep: 30 mins</span>
+                <span class="repeat-count">Made 12,430 Times!</span>
+            </div>
+            <p class="recipe-desc">Layers of pasta, rich meat sauce, and three cheeses make this a guaranteed crowd-pleaser.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 2 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r2.webp" alt="Sheet Pan Chicken Fajitas">
+            <span class="badge">Crowd-Pleaser</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Sheet Pan Chicken Fajitas</h3>
+            <div class="recipe-meta">
+                <span>Prep: 20 mins</span>
+                <span class="repeat-count">Made 8,720 Times!</span>
+            </div>
+            <p class="recipe-desc">Colorful peppers, onions and perfectly spiced chicken all roasted together for easy cleanup.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 3 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r3.webp" alt="Creamy Garlic Parmesan Pasta">
+            <span class="badge">Big Batch</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Creamy Garlic Parmesan Pasta</h3>
+            <div class="recipe-meta">
+                <span>Prep: 25 mins</span>
+                <span class="repeat-count">Made 15,210 Times!</span>
+            </div>
+            <p class="recipe-desc">Rich, creamy pasta that scales perfectly for large groups and leftovers taste even better.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 4 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r4.webp" alt="Classic Mac & Cheese">
+            <span class="badge">Potluck Classic</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Classic Mac & Cheese</h3>
+            <div class="recipe-meta">
+                <span>Prep: 40 mins</span>
+                <span class="repeat-count">Made 21,890 Times!</span>
+            </div>
+            <p class="recipe-desc">The ultimate comfort food with a crispy breadcrumb topping that everyone loves.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 5 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r5.webp" alt="One-Pot Chili">
+            <span class="badge">Family Favorite</span>
+        </div>
+        <div class="recipe-info">
+            <h3>One-Pot Chili</h3>
+            <div class="recipe-meta">
+                <span>Prep: 45 mins</span>
+                <span class="repeat-count">Made 9,540 Times!</span>
+            </div>
+            <p class="recipe-desc">Hearty, flavorful chili that's perfect for game day or cozy family dinners.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 6 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r6.webp" alt="BBQ Pulled Pork Sliders">
+            <span class="badge">Crowd-Pleaser</span>
+        </div>
+        <div class="recipe-info">
+            <h3>BBQ Pulled Pork Sliders</h3>
+            <div class="recipe-meta">
+                <span>Prep: 6 hours</span>
+                <span class="repeat-count">Made 7,820 Times!</span>
+            </div>
+            <p class="recipe-desc">Slow-cooked pork shoulder with homemade BBQ sauce - perfect for parties!</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 7 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r7.webp" alt="Vegetable Stir Fry">
+            <span class="badge">Big Batch</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Vegetable Stir Fry</h3>
+            <div class="recipe-meta">
+                <span>Prep: 20 mins</span>
+                <span class="repeat-count">Made 6,750 Times!</span>
+            </div>
+            <p class="recipe-desc">Colorful, crunchy vegetables in a savory sauce that's easy to double or triple.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 8 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r8.webp" alt="Seven-Layer Dip">
+            <span class="badge">Potluck Classic</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Seven-Layer Dip</h3>
+            <div class="recipe-meta">
+                <span>Prep: 15 mins</span>
+                <span class="repeat-count">Made 11,230 Times!</span>
+            </div>
+            <p class="recipe-desc">The ultimate party appetizer that disappears fast at every gathering.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 9 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r9.webp" alt="Homemade Pizza">
+            <span class="badge">Family Favorite</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Homemade Pizza</h3>
+            <div class="recipe-meta">
+                <span>Prep: 1 hour</span>
+                <span class="repeat-count">Made 14,670 Times!</span>
+            </div>
+            <p class="recipe-desc">Customizable dough recipe with perfect crispy-chewy crust every time.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 10 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r10.webp" alt="Taco Bar">
+            <span class="badge">Crowd-Pleaser</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Taco Bar</h3>
+            <div class="recipe-meta">
+                <span>Prep: 30 mins</span>
+                <span class="repeat-count">Made 8,910 Times!</span>
+            </div>
+            <p class="recipe-desc">All the fixings for a build-your-own taco night that pleases everyone.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 11 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r11.webp" alt="Baked Ziti">
+            <span class="badge">Big Batch</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Baked Ziti</h3>
+            <div class="recipe-meta">
+                <span>Prep: 50 mins</span>
+                <span class="repeat-count">Made 10,340 Times!</span>
+            </div>
+            <p class="recipe-desc">Easy pasta bake that feeds a crowd and freezes beautifully for later.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 12 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r12.webp" alt="Potato Salad">
+            <span class="badge">Potluck Classic</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Potato Salad</h3>
+            <div class="recipe-meta">
+                <span>Prep: 40 mins</span>
+                <span class="repeat-count">Made 13,780 Times!</span>
+            </div>
+            <p class="recipe-desc">Creamy, tangy classic that's a must-have at every summer gathering.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 13 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r13.webp" alt="Chicken Noodle Soup">
+            <span class="badge">Family Favorite</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Chicken Noodle Soup</h3>
+            <div class="recipe-meta">
+                <span>Prep: 1 hour</span>
+                <span class="repeat-count">Made 7,650 Times!</span>
+            </div>
+            <p class="recipe-desc">Comfort in a bowl with tender chicken, vegetables and perfect noodles.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 14 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r14.webp" alt="Build-Your-Own Burger Bar">
+            <span class="badge">Crowd-Pleaser</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Build-Your-Own Burger Bar</h3>
+            <div class="recipe-meta">
+                <span>Prep: 30 mins</span>
+                <span class="repeat-count">Made 6,890 Times!</span>
+            </div>
+            <p class="recipe-desc">All the toppings and sauces for a fun, interactive meal everyone loves.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+
+    <!-- Recipe 15 -->
+    <div class="recipe-card">
+        <div class="recipe-img">
+            <img src="r15.webp" alt="Breakfast Casserole">
+            <span class="badge">Big Batch</span>
+        </div>
+        <div class="recipe-info">
+            <h3>Breakfast Casserole</h3>
+            <div class="recipe-meta">
+                <span>Prep: 1 hour</span>
+                <span class="repeat-count">Made 5,430 Times!</span>
+            </div>
+            <p class="recipe-desc">Eggs, sausage, cheese and bread baked together - perfect for brunch crowds.</p>
+            <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+    </div>
+</div>
+       
+</section>
+
+    
+    <!-- Cooking Tips -->
+    <section class="cooking-tips">
+        <div class="container">
+            <h2 class="section-title">Cooking Feedback & Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Perfecting Your Dishes</h3>
+                    <p>Always taste as you cook! Adjust seasoning gradually - you can always add more but can't take it out.</p>
+                    <p>Let meat rest before slicing to keep juices in. For most meats, 5-10 minutes makes a big difference.</p>
+                    <p>Don't overcrowd pans - food steams instead of browns when too crowded.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Scaling Recipes</h3>
+                    <p>When doubling recipes, increase spices by 1.5x at first, then adjust to taste.</p>
+                    <p>For baking, it's often better to make multiple batches rather than one huge batch.</p>
+                    <p>Big batch cooking? Invest in a kitchen scale for precise measurements.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Crowd-Pleasing Secrets</h3>
+                    <p>Offer a variety of textures (something crunchy, something creamy) in meals.</p>
+                    <p>Include at least one familiar element in new dishes to make them approachable.</p>
+                    <p>For potlucks, bring serving utensils and label dishes with ingredients for those with allergies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Customer Satisfaction -->
+    <section class="satisfaction container">
+        <h2 class="section-title">Our Community's Satisfaction</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Of families make our recipes repeatedly</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Average recipe rating from 65,000+ reviews</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">83%</div>
+                <div class="stat-label">Of potluck hosts use our recipes regularly</div>
+            </div>
+        </div>
+        <div class="declaration">
+            We guarantee every recipe on RepeatFeast has been tested by families and approved as crowd-pleasers before we share them with you!
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>RepeatFeast</h3>
+                    <p>Your go-to source for recipes so good, they become regulars in your meal rotation.</p>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Family Favorites</a></li>
+                        <li><a href="#">Crowd-Pleasers</a></li>
+                        <li><a href="#">Big Batch Cooking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Meal Planning</a></li>
+                        <li><a href="#">Scaling Recipes</a></li>
+                        <li><a href="#">Potluck Guide</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Submit Your Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 RepeatFeast. All rights reserved. "Your Go-To Recipes, Time After Time" is a trademark of RepeatFeast.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - RepeatFeast</title>
+    <style>
+        /* Global Styles - Inherited from main site */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #FFA07A;
+            --accent: #FFD166;
+            --light: #FFF5E6;
+            --dark: #333333;
+            --success: #06D6A0;
+            --text-light: #777;
+            --border: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles - Same as main site */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), ;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Main Content */
+        .main-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .main-content h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .main-content h3 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        .main-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .main-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .main-content li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .contact-point {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .contact-point h4 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cookie-consent p {
+            margin-right: 20px;
+            flex: 1;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .accept-btn {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        .decline-btn {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .cookie-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - Enhanced with contact info */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+            
+            .cookie-consent {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                RepeatFeast <span>Your Go-To Recipes, Time After Time</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Cookie Policy</h1>
+            <p>Understanding how we use cookies to enhance your experience on RepeatFeast</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <h2>Our Cookie Policy</h2>
+            <p>At RepeatFeast, we believe in being transparent about how we collect and use data related to you. This Cookie Policy explains how we use cookies and similar technologies when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+            
+            <h3>What Are Cookies?</h3>
+            <p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners to make their websites work, or to work more efficiently, as well as to provide reporting information.</p>
+            <p>Cookies set by the website owner (in this case, RepeatFeast) are called "first party cookies." Cookies set by parties other than the website owner are called "third party cookies." Third party cookies enable third party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics).</p>
+            
+            <h3>Why Do We Use Cookies?</h3>
+            <p>We use first party and third party cookies for several reasons. Some cookies are required for technical reasons in order for our website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our site. Third parties serve cookies through our site for advertising, analytics, and other purposes.</p>
+            
+            <h2>Detailed Contact Points Regarding Cookies</h2>
+            
+            <div class="contact-point">
+                <h4>1. Cookie Consent Management</h4>
+                <p>If you have questions about how we manage cookie consent or wish to change your preferences after your initial choice, you can contact our Data Protection Officer at dpo@repeatfeast.com. Our team can guide you through the process of adjusting your cookie settings at any time. We maintain detailed records of consent to ensure compliance with data protection regulations. You can expect a response within 48 hours regarding any cookie consent inquiries. Our system allows for granular control over different types of cookies used on our site.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>2. Technical Support for Cookie Issues</h4>
+                <p>For technical problems related to cookies (such as the cookie banner not appearing or functioning properly), please contact our technical support team at support@repeatfeast.com. Include details about your browser version, device type, and a description of the issue. Our support team is available Monday-Friday from 9am-6pm PST to assist with these matters. Common issues we can help resolve include persistent cookies that won't delete or problems with site functionality after changing cookie preferences.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>3. Advertising Cookie Inquiries</h4>
+                <p>Questions about advertising cookies and tracking can be directed to our marketing team at ads@repeatfeast.com. We can provide information about the third-party advertising cookies we use and how to opt-out of personalized advertising. Our partners comply with industry self-regulation programs like the Digital Advertising Alliance. You can request details about specific ad networks we work with and their privacy practices. We also provide information about how to manage ad preferences directly with these networks.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>4. Analytics Cookie Questions</h4>
+                <p>For inquiries about our use of analytics cookies (like Google Analytics), contact analytics@repeatfeast.com. We can explain what data we collect through these cookies and how it's processed. Our analytics implementation includes data anonymization where possible. You can request information about how long we retain analytics data and how it's aggregated. We also provide instructions for using browser add-ons to opt-out of analytics tracking if desired.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>5. Functional Cookie Concerns</h4>
+                <p>If you have concerns about functional cookies that remember your preferences or login status, email functionality@repeatfeast.com. These cookies enhance your user experience but aren't strictly necessary. We can explain which features might not work properly if you disable these cookies. Our team can help troubleshoot issues that arise from rejecting functional cookies while trying to use certain site features.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>6. Cookie Policy Updates</h4>
+                <p>To be notified about significant changes to our Cookie Policy, subscribe to our policy update list at policy-updates@repeatfeast.com. We'll send notifications when we make material changes to how we use cookies. This service is optional and you can unsubscribe at any time. Notifications include summaries of changes and effective dates. We typically provide 30 days notice before implementing major policy changes.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>7. Cookie-Related Data Subject Requests</h4>
+                <p>For GDPR or CCPA requests related to data collected via cookies, contact privacy@repeatfeast.com. You can request access to, correction of, or deletion of personal data collected through cookies. Our team will verify your identity before processing these requests. We provide information about what data we've collected and how it's been used. For deletion requests, we'll also inform you about any legal basis we have for retaining certain data.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>8. Cookie Compliance Verification</h4>
+                <p>Business partners or regulators needing to verify our cookie compliance can contact compliance@repeatfeast.com. We maintain documentation of our cookie consent mechanisms and data processing activities. Auditors can request access to our data protection impact assessments related to cookies. We're happy to provide evidence of our compliance with ePrivacy Directive and GDPR requirements. Response times for compliance verification requests may vary based on the scope of information needed.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>9. Third-Party Cookie Information</h4>
+                <p>For detailed information about specific third-party cookies we use, email thirdparty-cookies@repeatfeast.com. We maintain an updated list of all third-party cookies with their purposes and durations. Our team can provide the privacy policies of these third-party services. We also explain how we vet third-party providers for data protection compliance. Requests are typically fulfilled within 5 business days with comprehensive information.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>10. Cookie Education Requests</h4>
+                <p>Schools or organizations wanting educational materials about cookies can contact education@repeatfeast.com. We've developed age-appropriate resources about online tracking technologies. Our team can provide presentations or materials for digital literacy programs. We offer virtual sessions about cookie technology and privacy considerations. These services are provided free as part of our commitment to digital education.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>11. Browser-Specific Cookie Help</h4>
+                <p>For help managing cookies in specific browsers, contact browsersupport@repeatfeast.com. Our team maintains guides for cookie settings in Chrome, Firefox, Safari, Edge, and others. We can provide step-by-step instructions for blocking or allowing specific cookies. Troubleshooting is available for browser-specific cookie issues. We also track known browser bugs that affect cookie functionality and can suggest workarounds.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>12. Mobile App Cookie Questions</h4>
+                <p>Questions about cookies and similar technologies in our mobile apps should go to app-support@repeatfeast.com. We can explain differences between web cookies and mobile device identifiers. Our team can guide you through privacy settings in both iOS and Android versions. We document all tracking technologies used in our mobile applications. Special considerations for mobile cookie management are available upon request.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>13. Cookie Performance Impact</h4>
+                <p>Technical questions about how cookies affect site performance can be sent to webperf@repeatfeast.com. We monitor how different cookies impact page load times and responsiveness. Our team can explain optimization techniques we use to minimize performance overhead. Benchmark data is available for different cookie configurations. We also welcome suggestions for improving our cookie implementation's efficiency.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>14. Cookie Security Concerns</h4>
+                <p>Report any security concerns related to our use of cookies to security@repeatfeast.com. We take the security of all tracking technologies seriously. Our team investigates potential vulnerabilities in cookie implementation. Security researchers can find our vulnerability disclosure policy on this email alias. We respond to all security reports within 24 hours and provide updates on resolution progress.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>15. Historical Cookie Data</h4>
+                <p>Requests regarding historical cookie data we may have stored should be sent to data-requests@repeatfeast.com. We can provide information about our data retention periods for different cookie types. Procedures for accessing archived cookie data are available upon request. Our team can explain how we anonymize and aggregate historical cookie data. There may be legal limits to what historical data we can provide.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>16. Cookie Preference Synchronization</h4>
+                <p>For help with cookie preferences across multiple devices, email sync-support@repeatfeast.com. We explain options for maintaining consistent cookie settings. Our team can troubleshoot issues with preference synchronization. We document which cookie preferences can be maintained across sessions and devices. Feature requests for improved synchronization are welcome at this address.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>17. Enterprise Cookie Management</h4>
+                <p>Business customers needing enterprise-level cookie controls should contact enterprise@repeatfeast.com. We offer solutions for organizations managing multiple users. Bulk cookie preference management options are available for corporate accounts. Our team can configure whitelists or blacklists for organizational needs. We provide documentation for IT administrators managing our site's cookies across their networks.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>18. Cookie Policy Translations</h4>
+                <p>Requests for translated versions of our Cookie Policy should go to translations@repeatfeast.com. We currently offer the policy in 12 languages. Accuracy verification of translations is available upon request. Our team can provide certified translations for legal purposes. We welcome volunteers to help improve our policy translations.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>19. Cookie Technology Partners</h4>
+                <p>Technology providers interested in partnering regarding cookie solutions can email partnerships@repeatfeast.com. We evaluate new cookie management technologies regularly. Our product team reviews proposals for improved consent mechanisms. Vendor questionnaires about our technical requirements are available upon request. We maintain high standards for any third-party cookie technology we implement.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>20. Cookie Research Participation</h4>
+                <p>To participate in user research about our cookie implementations, sign up at research@repeatfeast.com. We conduct regular studies to improve our cookie consent experience. Participants may be eligible for small rewards. Research opportunities include surveys, interviews, and usability testing. All research participation is voluntary and data is handled confidentially.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>21. Accessibility of Cookie Controls</h4>
+                <p>For accessibility concerns with our cookie consent interface, email accessibility@repeatfeast.com. We test our cookie banner with screen readers and other assistive technologies. Feedback from users with disabilities is especially valuable. Our team can provide alternative methods for managing cookie preferences if needed. We commit to resolving accessibility issues within 14 days when possible.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>22. Cookie Law Compliance</h4>
+                <p>Legal inquiries about our compliance with cookie laws worldwide should go to legal@repeatfeast.com. We monitor evolving regulations in all jurisdictions we operate. Our legal team can provide position statements on specific compliance questions. Documentation of our compliance framework is available for qualified requesters. Response times may vary based on the complexity of legal inquiries.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>23. Cookie Incident Reports</h4>
+                <p>Report suspected misuse of cookies or tracking technologies to abuse@repeatfeast.com. We investigate all reports of unauthorized tracking. Our security team monitors for cookie-based attacks. Incident response procedures include notification when required by law. We appreciate reports that help maintain the integrity of our tracking technologies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>24. Cookie Duration Questions</h4>
+                <p>Questions about how long specific cookies remain on user devices can be sent to retention@repeatfeast.com. We maintain a comprehensive list of all cookies with their durations. Our team can explain the rationale behind different expiration periods. Procedures for manually removing persistent cookies are available. We regularly review cookie durations to minimize data retention.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>25. Cookie-Based Feature Requests</h4>
+                <p>Suggestions for features that could use cookies to improve user experience go to features@repeatfeast.com. We evaluate how cookies could enable new functionality while respecting privacy. Our product team reviews all suggestions. We balance feature enhancements with our commitment to data minimization. Popular requests may be added to our public roadmap.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>26. Cookie Audit Requests</h4>
+                <p>Professional auditors needing information for cookie compliance audits should contact audits@repeatfeast.com. We provide documentation of our cookie scanning processes. Evidence of regular cookie audits is available. Our team can participate in audit interviews when scheduled in advance. Audit responses may require additional time for comprehensive information gathering.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>27. Cookie Technology Explanations</h4>
+                <p>For technical explanations of how specific cookies work, email tech-explanations@repeatfeast.com. Our engineers can provide detailed technical documentation. We explain the difference between various cookie types (session, persistent, secure, etc.). Flowcharts of cookie processes are available for educational purposes. Complex questions may be referred to our engineering team.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>28. Cookie Impact Assessments</h4>
+                <p>Requests for our Data Protection Impact Assessments related to cookies should go to dpia@repeatfeast.com. We document risks and mitigation strategies for all tracking technologies. Assessments include evaluations of privacy risks and user rights impacts. Redacted versions are available for research purposes. Full assessments may require verification of requester credentials.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>29. Cookie Configuration for Testing</h4>
+                <p>Developers needing help configuring cookies for testing environments can email dev-support@repeatfeast.com. We provide test cases for cookie behavior under different conditions. Our QA team can share methodologies for cookie testing. Documentation of expected cookie behaviors is available. We welcome collaboration on improving our testing frameworks.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>30. Cookie-Related Bug Reports</h4>
+                <p>Report bugs in our cookie implementation to bugs@repeatfeast.com. Please include detailed reproduction steps and affected browser versions. Our engineering team prioritizes cookie-related bugs that impact user privacy. We maintain a public bug bounty program for significant vulnerabilities. Status updates on bug fixes are provided to reporters.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>31. Cookie Policy for Children</h4>
+                <p>Questions about cookies in relation to child users should be sent to children-privacy@repeatfeast.com. We implement additional protections for users under 16. Our team can explain parental control options. Special cookie policies apply to our educational resources for children. We comply with all COPPA requirements regarding tracking technologies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>32. Cookie Usage in Emails</h4>
+                <p>Inquiries about tracking technologies in our email communications should go to email-privacy@repeatfeast.com. We document all tracking pixels and similar technologies in emails. Options for disabling email tracking are available. Our team can explain differences between web cookies and email tracking. We minimize tracking in transactional emails.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>33. Cookie Storage Technical Details</h4>
+                <p>Technical questions about how we store cookie data can be sent to storage-tech@repeatfeast.com. We document our data storage architectures and security measures. Information about encryption of cookie data is available. Our team can explain data flow diagrams for cookie information. Enterprise customers may request additional technical details.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>34. Cookie Consent Statistics</h4>
+                <p>Researchers requesting aggregate statistics about cookie consent patterns should email research-data@repeatfeast.com. We can provide anonymized data about consent rates over time. Geographic breakdowns of consent preferences are available. Our team can discuss appropriate methodologies for analyzing consent data. All shared data is thoroughly anonymized to protect user privacy.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>35. Cookie Policy Exceptions</h4>
+                <p>Requests for exceptions to our standard cookie policy should be sent to policy-exceptions@repeatfeast.com. We evaluate requests for special cookie needs case-by-case. Medical or accessibility exceptions are prioritized. Our team can explain the review process for exception requests. Approvals may require additional verification documentation.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>36. Cookie-Related Legal Requests</h4>
+                <p>Law enforcement or legal requests for cookie data must be sent to legal-requests@repeatfeast.com. All requests must include proper documentation. We comply with valid legal requests while protecting user privacy. Our legal team reviews all requests for compliance with applicable laws. Requesters must follow proper channels for preservation requests.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>37. Cookie Implementation Timeline</h4>
+                <p>Questions about the history and evolution of our cookie implementation can go to archive@repeatfeast.com. We maintain records of significant changes to our cookie practices. Historical versions of our cookie policy are available. Our team can explain major milestones in our approach to cookies. This information helps contextualize current practices.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>38. Cookie-Related Press Inquiries</h4>
+                <p>Members of the press with questions about our cookie practices should contact press@repeatfeast.com. Our communications team can arrange interviews with privacy experts. Press kits with information about our cookie policies are available. We aim to respond to media inquiries within 24 hours. Background briefings can be arranged for complex topics.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>39. Cookie Training Requests</h4>
+                <p>Organizations seeking training on cookie management best practices should email training@repeatfeast.com. We offer workshops on implementing compliant cookie solutions. Custom training sessions can be arranged for corporate clients. Our privacy experts can speak at conferences about cookie compliance. Educational materials are available for academic use.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>40. General Cookie Questions</h4>
+                <p>For all other questions about cookies not covered above, email cookies@repeatfeast.com. Our cookie team routes inquiries to the appropriate specialists. We aim to respond to all general questions within 72 hours. Common questions are added to our public FAQ. Your feedback helps us improve our cookie information resources.</p>
+            </div>
+            
+            <h3>Types of Cookies We Use</h3>
+            <p>We use different types of cookies for various purposes:</p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> These are necessary for the website to function and cannot be switched off.</li>
+                <li><strong>Performance Cookies:</strong> These allow us to count visits and traffic sources to measure and improve site performance.</li>
+                <li><strong>Functional Cookies:</strong> These enable enhanced functionality and personalization.</li>
+                <li><strong>Targeting Cookies:</strong> These may be set through our site by our advertising partners.</li>
+            </ul>
+            
+            <h3>Managing Cookies</h3>
+            <p>You can manage your cookie preferences through our cookie consent tool, which appears when you first visit our site. You can also control cookies through your browser settings. However, please note that disabling certain cookies may affect your experience of the site.</p>
+            
+            <h3>Changes to This Policy</h3>
+            <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our data use practices. We encourage you to check this page periodically for the latest information about our use of cookies.</p>
+        </div>
+    </div>
+    
+    <!-- Footer with Contact Info -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>RepeatFeast</h3>
+                    <p>Your go-to source for recipes so good, they become regulars in your meal rotation.</p>
+                    <div class="contact-info">
+                        <p><i>📍</i> 123 Culinary Lane, Foodville, CA 90210</p>
+                        <p><i>📞</i> +1 (555) 123-4567</p>
+                        <p><i>✉️</i> hello@repeatfeast.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Meal Planning</a></li>
+                        <li><a href="#">Scaling Recipes</a></li>
+                        <li><a href="#">Potluck Guide</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Submit Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 RepeatFeast. All rights reserved. "Your Go-To Recipes, Time After Time" is a trademark of RepeatFeast.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent">
+        <p>We use cookies to enhance your experience on our website. By clicking "Accept", you consent to our use of all cookies. You can manage your preferences at any time.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept-btn">Accept</button>
+            <button class="cookie-btn decline-btn">Decline</button>
+        </div>
+    </div>
+    
+    <script>
+        // Simple cookie consent handling
+        document.querySelector('.accept-btn').addEventListener('click', function() {
+            document.querySelector('.cookie-consent').style.display = 'none';
+            // In a real implementation, you would set a cookie here
+            console.log('Cookies accepted');
+        });
+        
+        document.querySelector('.decline-btn').addEventListener('click', function() {
+            document.querySelector('.cookie-consent').style.display = 'none';
+            // In a real implementation, you would respect this preference
+            console.log('Cookies declined');
+        });
+        
+        // FAQ toggle functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('span:last-child');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    toggle.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
